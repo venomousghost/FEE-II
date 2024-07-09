@@ -1,0 +1,50 @@
+
+body{
+    background-color:beige;
+    margin: 350px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 10px solid black;
+    
+}
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem 5rem;  
+    font-family:cursive;
+    background-color:antiquewhite;
+    color:cadetblue;
+    
+  }
+  .btn {
+    width: 150px;
+    background-color:cornflowerblue;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color:black;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  input{
+    background-color:burlywood;
+  }
+  select{
+    background-color:burlywood;
+
+  }
+  textarea{
+    background-color:burlywood;
+  }
+  .btn:hover {
+    background-color: blue;
+  }
+  
+  
