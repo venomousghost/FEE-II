@@ -1,0 +1,23 @@
+*{
+    background-color: black;
+    color: aliceblue;
+    font-family: cursive;
+    font-size: xx-large;
+    text-align: center;
+    
+}
+#red{
+    color: red;
+}
+#blue{
+    color: blue;
+}
+#green{
+    color: green;
+}
+#para{
+    background-color:chocolate;
+}
+input[placeholder='Enter Email']{
+    background-color: bisque;
+}
