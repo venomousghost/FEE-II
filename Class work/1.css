@@ -1,0 +1,395 @@
+*{
+    font-family: sans-serif;
+}
+body{
+    background-color: #f7f7f7;
+}
+.navbar {
+    background-color: #ffffff;
+    overflow: hidden;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    font-family: sans-serif;
+    color: gray;
+    box-shadow: 0px 0px 0px 2px grey;
+    position: fixed;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline-block;
+    
+}
+
+.navbar li a {
+    display: block;
+    padding: 30px 20px;
+    color: black;
+    text-decoration: none;
+}
+#left{
+    float: left;
+    padding-left: 150px;
+    font-size: 30px;
+}
+.center{
+   
+   float: inline-start;
+    
+}
+.navbar #right{
+    float: right;
+    display: flex;
+    padding-right:  200px ;
+}
+.navbar img{
+    cursor: pointer;
+}
+.navbar a:hover, .navbar a:active {
+    border-bottom: 1px solid gray;
+    padding-bottom: 0px;
+    
+}
+.box img
+{
+    margin-bottom: 50px;
+    
+}.box1{
+    margin: 0% 15% 0%;
+    display: flex;
+    padding-top:50px ;
+}
+.boxsm .bosm{
+    max-height: 50px;
+}
+.boxsm img{
+    margin-right: 30px;
+}
+.bosm .items p{
+    margin-bottom: 0;
+}
+.boxsm .items p{
+    margin-bottom: 0;
+}
+.bosm img{
+    margin-left: 60px;
+}
+.box1 .items{
+    color: white;
+    font-size: 40px;
+}
+.box1 button{
+    border-radius: 20px;
+    border: 0;
+    padding: 10px;
+    width: 100px;
+    background-color: #ffffff;
+    
+}
+.box1 .boxsm{
+    background-color: rgb(252, 212, 36);
+    border-radius: 15px;
+    width: 600px;
+    padding: 20px;
+    display: flex;
+    margin-right:20px ;
+    
+}
+.box1 .bosm{
+    background-color: rgb(248, 70, 100);
+    border-radius: 15px;
+    width: 600px;
+    display: flex;
+    padding: 20px;
+    margin-left: 10px;
+}
+.row{
+
+    margin: 0% 13% 0%;
+}
+.row .upper{
+    display: flex;
+   justify-content: space-between;
+    margin-top: 100px;
+    border-bottom: 3px solid grey;
+}
+.row .upper button{
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 30px;
+    height: 30px;
+    margin-left: 800px;
+    width: 150px;
+    padding: 0px;
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid grey;
+    background-color: #f7f7f7;
+}
+.row .upper p{
+    font-family: sans-serif;
+    font-size: 30px;
+}
+.card-box{
+    display: flex;
+    border: none;
+    margin-top: 40px;
+}
+.card{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-inline: 28px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(206, 206, 206, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.19);
+    transition: .5s;
+    margin-bottom: 100px;
+    
+}
+.card button{
+    border: none;
+    color:#fff ;
+    justify-content: center;
+    background-color: rgb(181, 221, 72);
+    padding: 8px;
+    border-radius: 30px;
+    width: 130px;
+    cursor: pointer;
+}
+.card p{
+    font-size: 18px;
+    font-weight: 200;
+    color: rgb(65, 65, 65);
+}
+.card:hover{
+    transform: scale(1.1);
+    z-index: 3;
+}
+.text{
+    margin-top: 180px;
+}
+.n{
+    color: rgb(181, 221, 72);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;}
+ .p{
+    font-size: 38px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.content{  
+    width: 100%;
+    display: flex;
+    margin-top: 130px;
+}
+.inner{
+    padding: 10px;
+}
+.divider{
+    width: 100px;
+    margin: 30px 0px 30px;
+    border: 1.5px solid rgb(181, 221, 72);
+}
+.content .d{
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: 130px;
+}
+ .image img{
+    border-radius: 20px ;
+    padding-left: 120px;
+ }
+ .content .l{
+    color: gray;
+    line-height: 20px;
+    font-size: 18px;
+    margin-bottom: 100px;
+ }
+ .inner button{
+    margin: 30px 0px 30px;
+    padding: 10px 20px 10px;
+    border: none;
+    background-color: rgb(181, 221, 72);
+    color: #fff;
+    font-size: 25px;
+    border-radius: 30px;
+    font-weight: 400;
+ }
+ .long{
+    width: 100%;
+    height: 200px;
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    margin-top: 200px;
+    background-color: #fff;
+    
+ } .circle{
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    background-color: rgb(181, 221, 72);
+    border-radius: 50%;
+    margin-top: 60px;
+    margin-left: 50px;
+ }
+ .circle img{
+    padding: 25px 0px 0px 23px;
+ }
+ .another{
+    padding-left: 30px;
+ }
+ .tex p{
+    font-size: 30px;
+    padding-top: 30px;
+ }
+ .longbox2{
+    margin-top: 60px;
+ }
+ .longbox2 input{
+    padding: 20px;
+    border-radius: 20px;
+    height: 30px;
+    width: 350px;
+    border: 1px solid gray;
+    margin-left: 300px;
+ }
+ .longbox2 button{
+    padding: 20px 10px 20px;
+    border-radius: 15px;
+    height: 70px;
+    width: 150px;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: rgb(181, 221, 72);
+    border: none;
+ }
+
+.image2{
+    background-image: url(reindeer.jpg);
+    width: 98%;
+    height: 600px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.insta{
+    margin-top: 200px;
+    text-align: center;
+}
+.insta p{
+    color: rgb(181, 221, 72);
+    font-size: 20px;
+    font-weight: 500;
+}
+.insta #li{
+    font-size: 45px;
+    color: black;
+}
+.card-box2{
+    display: flex;
+    margin-top: 100px;
+}
+.card-box2 .card1{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 30px;
+   
+    margin-inline: 10px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(206, 206, 206, 0.2), 0 6px 20px 0 rgba(124, 124, 124, 0.19);
+    transition: .5s;
+    margin-bottom: 100px;
+}
+.card1 img{
+    border-radius: 20px;
+}
+.card1:hover{
+    transform: scale(1.1);
+    z-index: 3;
+}
+.button button{
+    margin-top: 20px;
+    padding: 20px;
+    color: #fff;
+    font-size: 20px;
+    background-color: rgb(181, 221, 72);
+    width: 250px;
+    border: none;
+    border-radius: 50px;
+    margin-left: 550px;
+    margin-bottom: 100px;
+}
+.image2{
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+    
+}
+.image2 #big{
+    font-size: 40px;
+}
+.circle2{
+    border-radius: 50%;
+    background-color: rgb(181, 221, 72);
+    width: 100px;
+    align-items: center;
+}
+.footer {
+    height: 150px;
+    color: #fff;
+    background-color: rgb(181, 221, 72);
+    display: flex;
+    padding: 0 10% 0;
+    margin-bottom: 0px;
+}
+.footer ul{
+    display: flex;
+    list-style: none;
+    padding-top: 60px;
+    margin: 0;
+    text-align: center;
+
+}
+
+.footer ul #left{
+    padding: 10px 200px 0px 0px;
+    
+}
+.footer ul #center{
+    margin-inline: 20px;
+    padding-top: 30px;
+}
+.icon{
+    padding: 80px 20px 50px ;
+    margin-left: 300px;
+}
+.icon img{
+    width: 25px; 
+    height: 25px;
+}
+.last{
+    background-color: rgb(181, 221, 72);
+    margin-top: 0px;
+    display: flex;
+}
