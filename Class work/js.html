@@ -1,12 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Toggler</title>
+    <style>
+        #image-container {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 100%;
+            }
+    </style>
+</head>
 <body>
-  <script>
-    let age = prompt("enter age: ");
-    if (age >= 18) {
-      alert("Eligible for vote.");
-    } else {
-      alert("Not Eligible for vote.");
+    <div id="image-container">
+        <img id="toggle-image" src="spiderman.jpeg" alt="Image 1">
+    </div>
+
+    
+    <script> const images = ['spiderman.jpeg', 'kid.jpg', 'clay.jpg'];
+    let currentIndex = 0;
+    const imageElement = document.getElementById('toggle-image');
+    
+    function toggleImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        imageElement.src = images[currentIndex];
     }
-  </script>
+    
+    setInterval(toggleImage, 2000);
+    </script>
 </body>
 </html>

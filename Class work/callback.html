@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Processing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            animation: slideIn 1s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeTextIn 1.5s ease forwards;
+        }
+        @keyframes fadeTextIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .start-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            background-color: #4a90e2;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.4);
+            transform: scale(1);
+        }
+        button:hover {
+            background-color: #357abd;
+            box-shadow: 0 6px 15px rgba(53, 122, 189, 0.6);
+            transform: scale(1.05);
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4a90e2;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .progress-bar-container {
+            margin-top: 30px;
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .progress-bar {
+            width: 0;
+            height: 15px;
+            background-color: #4a90e2;
+            border-radius: 20px;
+            transition: width 0.4s ease;
+        }
+        #output {
+            margin-top: 20px;
+            text-align: left;
+        }
+        #output p {
+            background-color: #eef5ff;
+            border-left: 4px solid #4a90e2;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            color: #333;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeLog 0.8s ease forwards;
+        }
+        @keyframes fadeLog {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Icon animations */
+        .icon-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            position: relative;
+        }
+        .icon {
+            font-size: 32px;
+            opacity: 0.4;
+            transition: all 0.5s ease;
+        }
+        .icon.active {
+            transform: scale(1.3);
+            opacity: 1;
+        }
+        .icon.download { color: #4caf50; }
+        .icon.compress { color: #ff9800; }
+        .icon.upload { color: #2196f3; }
+        .icon-check {
+            position: absolute;
+            font-size: 18px;
+            color: #28a745;
+            top: 0;
+            right: -20px;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        .icon-check.visible {
+            opacity: 1;
+        }
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            button {
+                width: 100%;
+                padding: 14px;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>File Processing Workflow</h1>
+        <div class="start-container">
+            <button id="startProcess">Start Process</button>
+            <div class="spinner" id="spinner"></div>
+        </div>
+        
+        <!-- Progress bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <!-- Moving icons with checkmarks -->
+        <div class="icon-container">
+            <div class="icon-wrapper">
+                <i class="fas fa-download icon download"></i>
+                <i class="fas fa-check icon-check check-download"></i>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-file-archive icon compress"></i>
+                <i class="fas fa-check icon-check check-compress"></i>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-cloud-upload-alt icon upload"></i>
+                <i class="fas fa-check icon-check check-upload"></i>
+            </div>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function showSpinner() {
+            document.getElementById("spinner").style.display = "inline-block";
+        }
+
+        function hideSpinner() {
+            document.getElementById("spinner").style.display = "none";
+        }
+
+        function updateProgress(percentage) {
+            const progressBar = document.getElementById("progressBar");
+            progressBar.style.width = percentage + "%";
+        }
+
+        function activateIcon(step) {
+            const icons = document.querySelectorAll('.icon');
+            icons.forEach(icon => icon.classList.remove('active'));
+            document.querySelector(`.icon.${step}`).classList.add('active');
+        }
+
+        function showCheckmark(step) {
+            const checkmark = document.querySelector(`.check-${step}`);
+            checkmark.classList.add('visible');
+        }
+
+        function downloadFile(url, downloadCallback) {
+            logMessage("Started Downloading...");
+            activateIcon("download");
+            updateProgress(33);
+            setTimeout(() => {
+                const fileName = url.split("/").pop();
+                showCheckmark("download");
+                downloadCallback(fileName);
+            }, 2000);
+        }
+
+        function compressFile(path, compressCallback) {
+            logMessage("File compression started...");
+            activateIcon("compress");
+            updateProgress(66);
+            setTimeout(() => {
+                const compressedFile = path.split(".")[0] + ".zip";
+                showCheckmark("compress");
+                compressCallback(compressedFile);
+            }, 5000);
+        }
+
+        function uploadFile(compressedFile, uploadCallback) {
+            logMessage("Uploading file...");
+            activateIcon("upload");
+            updateProgress(100);
+            setTimeout(() => {
+                showCheckmark("upload");
+                logMessage("Upload completed successfully");
+                uploadCallback(compressedFile);
+            }, 5000);
+        }
+
+        function logMessage(message) {
+            const output = document.getElementById("output");
+            const p = document.createElement("p");
+            p.textContent = message;
+            p.style.animationDelay = "0.3s";
+            output.appendChild(p);
+        }
+
+        function main() {
+            const url = "https://www.anyz.com/abc.mp3";
+            showSpinner();
+            downloadFile(url, (downloadedFile) => {
+                logMessage(`Downloaded: ${downloadedFile}`);
+                compressFile(downloadedFile, (compressedFile) => {
+                    logMessage(`Compressed to: ${compressedFile}`);
+                    uploadFile(compressedFile, (uploadedFile) => {
+                        logMessage(`Uploaded: ${uploadedFile}`);
+                        hideSpinner();
+                    });
+                });
+            });
+        }
+
+        document.getElementById("startProcess").addEventListener("click", main);
+    </script>
+</body>
+</html>
